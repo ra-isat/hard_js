@@ -1,33 +1,56 @@
-let num = 266219;
+"use strict";
 
-num = num + '';
+let lang = prompt('Введите "ru" или "en"');
 
-let lengthNum = num.length;
-
-let arr = num.split('');
-
-let multi = 1;
-for (let i = 0; i < lengthNum; i++) {
-    multi *= +arr[i];
+if (lang === "ru") {
+    console.log(`Понедельник,
+Вторник,
+Среда,
+четверг, Пятница,
+Суббота,
+Воскресенье`);
+} else if (lang === "en") {
+    console.log(`Monday,
+Tuesday,
+Wednesday,
+Thursday,
+Friday,
+Saturday,
+Sunday`);
 }
-console.log(multi);
 
-// или так
+switch(lang) {
+    case "ru":
+        console.log(`Понедельник,
+        Вторник,
+        Среда,
+        четверг, Пятница,
+        Суббота,
+        Воскресенье`);
+        break;
 
-let num1 = +arr[0];
-let num2 = +arr[1];
-let num3 = +arr[2];
-let num4 = +arr[3];
-let num5 = +arr[4];
-let num6 = +arr[5];
+    case "en":
+        console.log(`Monday,
+        Tuesday,
+        Wednesday,
+        Thursday,
+        Friday,
+        Saturday,
+        Sunday`);
+        break;
+    default:
+        console.log("Мы на таком не говорим"); 
+}
 
-multi = num1 * num2 * num3 * num4 *num5 * num6;
+let map = new Map([
+    ["ru", "Понедельник, Вторник, Среда, четверг, Пятница, Суббота, Воскресенье"],
+    ["en", "Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday"]
+]);
 
-console.log(multi);
+alert(map.get(lang));
 
-// возведение в степень
 
-let power = multi ** 3;
-power = power + '';
-
-document.write(power[0], power[1]);
+let namePerson = prompt("Имя?");
+namePerson === "Артем" ? console.log("директор") 
+: (namePerson === "Максим" ? console.log("преподаватель")
+: console.log('студент'));
